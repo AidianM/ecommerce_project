@@ -1,0 +1,35 @@
+package com.tts.ecommerce.model;
+
+import java.util.Map;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name="userprofile")
+public class User {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
+	
+	@NotNull
+	private String username;
+	
+	@NotNull
+	private String password;
+	
+	private Map<Product, Integer> cart;
+	
+
+}

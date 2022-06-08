@@ -1,0 +1,8 @@
+package com.tts.ecommerce.controller;
+
+@Data
+@Controller
+@ControllerAdvice //this makes the @ModeAttribute's of this controller available to all controllers, for the navbar
+public class MainController {
+
+}

@@ -1,0 +1,31 @@
+package com.tts.ecommerce.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+
+import lombok.Data;
+
+@Data
+@Controller
+@ControllerAdvice //makes @ModelAtrribute's of this controller available to all controllers, for the navbar
+public class MainController {
+
+	@Autowired
+	ProductService productService;
+	
+	@GetMapping("/")
+	public String main() {
+		return "main";
+	}
+	
+	@ModelAttribute("products")
+	public List<Product> products(){
+		return productService.findAll();
+	}
+	
+	@ModelAttribute("categories")
+	public List<String> categories(){
+		return productService.findDistinctCategories();
+		
+	}
+}

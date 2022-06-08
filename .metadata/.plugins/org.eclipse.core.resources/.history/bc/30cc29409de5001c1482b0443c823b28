@@ -1,0 +1,15 @@
+package com.tts.ecommerce.controller.copy;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+
+import lombok.Data;
+
+@Data
+@Controller
+@ControllerAdvice //this makes the @ModeAttribute's of this controller available to all controllers, for the navbar
+public class MainController {
+	
+	@Autowired
+
+}
